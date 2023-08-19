@@ -5,23 +5,31 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
-    var incrementValue :Int = 0;
-    lateinit var txtContent :TextView;
+
+    lateinit var txtContent: TextView;
+    lateinit var mainViewModel: MainViewModel;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        txtContent = findViewById(R.id.txt_content);
-
         // Add observer for activity life cycle
         lifecycle.addObserver(Observer());
+        // intilize view-model
+        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
+        txtContent = findViewById(R.id.txt_content);
+
+        settext()
     }
-    fun increment(view:View){
-        incrementValue ++;
+
+    fun settext() {
+        txtContent.text = mainViewModel.incrementValue.toString();
+    }
+
+    fun increment(view: View) {
+        mainViewModel.increment(view);
         settext();
-    }
-    fun  settext() {
-       txtContent.text = incrementValue.toString();
     }
 }
