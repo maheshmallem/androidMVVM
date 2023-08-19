@@ -18,15 +18,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/txt_author"
-        android:text="+"
+        android:id="@+id/btn_next"
+        android:text="Next"
         android:layout_marginTop="8dp"
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="increment"
+        android:onClick="onNext"
+
+        />
+    <Button
+        android:id="@+id/btn_previus"
+        android:text="Previus"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onPrevius"
 
         />
 

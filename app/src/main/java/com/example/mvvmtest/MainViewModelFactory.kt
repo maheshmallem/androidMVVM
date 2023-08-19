@@ -1,11 +1,12 @@
 package com.example.mvvmtest
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
 
-class MainViewModelFactory(): ViewModelProvider.Factory {
+class MainViewModelFactory(var context:Context): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return MainViewModel() as T;
+        return MainViewModel(context) as T;
     }
 }
