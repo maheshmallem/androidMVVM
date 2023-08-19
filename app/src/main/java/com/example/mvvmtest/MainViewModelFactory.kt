@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
 
-class MainViewModelFactory(val intialValue :Int): ViewModelProvider.Factory {
+class MainViewModelFactory(): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return MainViewModel(intialValue) as T;
+        return MainViewModel() as T;
     }
 }
