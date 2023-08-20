@@ -8,11 +8,16 @@ import com.example.mvvmtest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
    lateinit var binding :ActivityMainBinding;
+    lateinit var mainViewModel: MainViewModel;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
-        var quoteObj = Quote("Iam King when i want","Mahesh Mallem")
-        binding.quote = quoteObj;
+        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java);
+
+        // Data varaible intilize
+        binding.mainviewmodel = mainViewModel;
+        binding.lifecycleOwner = this;
+
 
     }
 
