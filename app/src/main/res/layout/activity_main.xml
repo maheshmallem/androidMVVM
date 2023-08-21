@@ -22,7 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <Button
-                android:id="@+id/btn_insert_quote"
                 android:layout_margin="32dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,8 +29,6 @@
                 />
 
             <TextView
-                android:textSize="20sp"
-                android:id="@+id/txt_quoutes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="32dp"
